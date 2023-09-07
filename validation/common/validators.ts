@@ -1,11 +1,11 @@
-import { checkWord } from '@/validation/common/helpers'
+import { checkWord } from '../common/helpers'
 import _ from 'lodash'
 import validate from 'validate.js'
-import { Config } from '@/validation/common/helpers'
-import { errorTypes } from '@/validation/common/helpers'
-import { courseContentConfigType } from '@/validation/common/helpers'
-import { HelpersDiscContent } from '@/validation/common/helpers'
-import { formatInitials, isNumeric } from '@/validation/common/helpers'
+import { Config } from '../common/helpers'
+import { errorTypes } from '../common/helpers'
+import { courseContentConfigType } from '../common/helpers'
+import { HelpersDiscContent } from '../common/helpers'
+import { formatInitials, isNumeric } from '../common/helpers'
 
 // Функции вадидации для подключения (потом вынести в отдельный файл)
 function createCheckWordInclusion(keyWord: string, translation: string) {
@@ -20,7 +20,7 @@ function createCheckWordInclusion(keyWord: string, translation: string) {
 
 function createCheckProtocolNumber(type: string) {
   return function(value: any, options: any, key: any, attributes: any) {
-    const errors = []
+    const errors: string[] = []
     if (!attributes.approvalList[type]) {
       errors.push(errorTypes.needProtocolNumber)
     }
@@ -259,7 +259,7 @@ function validateLabList(val: any, options: any, key: any, attributes: any) {
     attributes.discContent
   )
   if (attributes?.discContent?.areLabs?.length > 0) {
-    const errors = []
+    const errors: string[] = []
     if (val && val.length === 0) {
       errors.push(errorTypes.leastOneWork)
     }
@@ -313,7 +313,7 @@ function validatePracsList(val: any, options: any, key: any, attributes: any) {
     attributes.discContent
   )
   if (attributes?.discContent?.arePracs?.length > 0) {
-    const errors = []
+    const errors: string[] = []
     if (val && val.length === 0) {
       errors.push(errorTypes.leastOneWork)
     }
@@ -905,7 +905,7 @@ function validateApprovalListData(rows: any, options: any) {
   if (_.isEmpty(rows)) {
     return [errorTypes.req]
   } else {
-    const errors = []
+    const errors: string[] = []
     if (!options.field) return
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i]

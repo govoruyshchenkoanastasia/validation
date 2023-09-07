@@ -1,10 +1,9 @@
-import { defaultPresenceSet } from '@/validation/common/validators'
+import { defaultPresenceSet } from '../../../common/validators'
 
 export const approvalConstraints = {
   'approvalList.developer': {
     validatorPersonForSchema: true
   },
-  // ? space for the array
   'approvalList.department': {
     presence: defaultPresenceSet
   },

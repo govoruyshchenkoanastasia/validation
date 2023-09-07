@@ -1,7 +1,7 @@
 import {
   defaultPresenceSet,
   validationYearSet
-} from '@/validation/common/validators'
+} from '../../common/validators'
 
 export const titleConstraints = {
   'general.directionType': {

@@ -1,4 +1,4 @@
-import { defaultPresenceSet } from '@/validation/common/validators'
+import { defaultPresenceSet } from '../../../common/validators'
 
 export const describeConstraints = {
   'annotaDisc.discAnnotRu': {

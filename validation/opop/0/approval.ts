@@ -1,4 +1,4 @@
-import { validationYearSet } from '@/validation/common/validators'
+import { validationYearSet } from '../../common/validators'
 
 export const approvalConstraints = {
   'approvalList.director': {

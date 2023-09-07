@@ -1,13 +1,14 @@
 import { validate } from 'validate.js'
+
 import {
   OPOPConstraints,
   RPCommonConstraints,
   RPDConstraints,
   RPGIAConstraints,
   RPPConstraints
-} from '@/validation/common/importConstraints'
+} from '../common/importConstraints'
 import _ from 'lodash'
-import { createTreeConstraints } from '@/validation/common/treeValidation'
+import { createTreeConstraints } from '../common/treeValidation'
 
 export enum DocType {
   OPOP = 'OPOP',
