@@ -106,6 +106,19 @@ function validateArrayLength(value: any, options: any) {
 }
 
 function validateResourceTable(value: any) {
+  value = value.map(
+    v => {
+      const urls = v.nameAndDesc?.match(/(((https?:\/\/)|(www\.))[^\s]+)/g)
+      console.log('urls: ', urls);
+      const url = _.last(urls)
+      return {
+        nameAndDesc: url
+          ? v.nameAndDesc?.replace(url, '').trim()
+          : v.nameAndDesc,
+        url
+      }
+    }
+  )
   const errors: string[] = []
   if (_.isEmpty(value)) {
     errors.push(errorTypes.leastOneValue)

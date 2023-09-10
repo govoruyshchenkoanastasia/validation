@@ -2,7 +2,7 @@
   "name": "trajectories-validation",
   "version": "1.0.0",
   "description": "",
-  "main": "validation/common/validateAllSchemas.ts",
+  "main": "dist/common/validateAllSchemas.js",
   "files": ["validation/**/*"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
